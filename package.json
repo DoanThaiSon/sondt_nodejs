@@ -17,10 +17,12 @@
   "author": "Son Doan",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "esm": "^3.2.25",
     "express": "5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.3",
     "mysql2": "^3.15.3"
   },

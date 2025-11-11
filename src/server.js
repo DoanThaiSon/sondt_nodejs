@@ -9,7 +9,7 @@ import { connectDB } from './config/mgdb.js';
 import taskRoute from "./routes/tasksRouters.js";
 import userRoute from "./routes/usersRouters.js";
 import bannerRoute from "./routes/bannerRouters.js";
-
+import authRoute from "./routes/accountRouters.js";
 dotenv.config();
 const app = express()
 const port = process.env.PORT||8888;
@@ -22,6 +22,7 @@ if (process.env.NODE_ENV !== "production") {
 app.use("/api/tasks", taskRoute);
 app.use("/api/user", userRoute);
 app.use("/api/banner", bannerRoute);
+app.use("/api/auth", authRoute);
 app.use(express.urlencoded({ extended: true }));
 initAPIRoute(app);
 app.use('/v1',webRoutes);
