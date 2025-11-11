@@ -9,12 +9,16 @@ import { connectDB } from './config/mgdb.js';
 import taskRoute from "./routes/tasksRouters.js";
 import userRoute from "./routes/usersRouters.js";
 import bannerRoute from "./routes/bannerRouters.js";
+
 dotenv.config();
 const app = express()
 const port = process.env.PORT||8888;
 const hostname = process.env.HOST_NAME;
 configViewEngine(app);
 app.use(express.json());
+if (process.env.NODE_ENV !== "production") {
+  app.use(cors({ origin: "http://localhost:8080" }));
+}
 app.use("/api/tasks", taskRoute);
 app.use("/api/user", userRoute);
 app.use("/api/banner", bannerRoute);
