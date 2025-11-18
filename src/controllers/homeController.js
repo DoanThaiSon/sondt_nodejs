@@ -3,7 +3,7 @@ export const getHomepage = (req, res) => {
 };
 
 export const checkABC = (req, res) => {
-  return res.send('Hello from checkABC');
+    return res.render('wedding_invitation.ejs');
 };
 
 export const getHoidanit = (req, res) => {

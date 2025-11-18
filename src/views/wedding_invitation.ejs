@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Mời Cưới - Sơn & Dương</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #fff1f8 0%, #fdfdfb 100%);
+            color: #444;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            max-width: 420px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(216, 149, 180, 0.25);
+            position: relative;
+        }
+        .header {
+            height: 280px;
+            background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.25)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, transparent 40%, #ffffff 100%);
+        }
+        .initials {
+            font-family: 'Playfair Display', serif;
+            font-size: 90px;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        .content {
+            padding: 50px 40px 60px;
+            text-align: center;
+            position: relative;
+        }
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #d895b4;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 17px;
+            color: #999;
+            margin-bottom: 40px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .names {
+            margin: 40px 0;
+        }
+        .groom, .bride {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #555;
+            margin: 18px 0;
+            position: relative;
+        }
+        .groom { color: #777; }
+        .bride { color: #d895b4; }
+        .heart {
+            font-size: 48px;
+            color: #ffb6c1;
+            margin: 20px 0;
+        }
+        .details {
+            background: #fdf6f9;
+            padding: 35px 30px;
+            border-radius: 18px;
+            margin: 40px 0;
+            border: 1px solid #ffe4ee;
+        }
+        .details h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d895b4;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .details p {
+            margin: 16px 0;
+            font-size: 16px;
+            color: #666;
+        }
+        .details strong {
+            color: #d895b4;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 15px;
+            color: #aaa;
+        }
+        .flower {
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.1;
+            color: #ffb6c1;
+        }
+        .flower1 { top: 20px; left: 20px; transform: rotate(20deg); }
+        .flower2 { bottom: 30px; right: 15px; transform: rotate(-40deg); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="initials">S&D</div>
+        </div>
+
+        <div class="content">
+            <div class="flower flower1">✿</div>
+            <div class="flower flower2">✿</div>
+
+            <p class="subtitle">Lễ Thành Hôn</p>
+            <h1 class="title">Chúng tôi kết hôn</h1>
+
+            <div class="names">
+                <div class="groom">Đoàn Thái Sơn</div>
+                <div class="heart">♡</div>
+                <div class="bride">Trần Thùy Dương</div>
+            </div>
+
+            <div class="details">
+                <h3>Trân trọng kính mời</h3>
+                <p><strong>Thời gian:</strong> 10h30 - Thứ Bảy, ngày 29 tháng 11 năm 2025</p>
+                <p><strong>Địa điểm:</strong> Trung tâm tiệc cưới Miến Hương</p>
+                <p>Số 63 Thống Nhất, Tp. Hải Dương</p>
+            </div>
+
+            <p class="footer">
+                Sự hiện diện của quý khách là niềm hạnh phúc lớn nhất đối với đôi tân lang tân nương<br>
+                Thương mến kính mời!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
