@@ -1,328 +1,548 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap Đám Cưới</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Quicksand', 'Segoe UI', Tahoma, sans-serif;
-            background: linear-gradient(135deg, #ffeef8 0%, #fff5f0 100%);
-            padding: 40px 20px;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            animation: fadeInDown 1s ease;
-        }
-        
-        .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3em;
-            color: #d4526e;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .header .hearts {
-            font-size: 2em;
-            color: #ff6b9d;
-            animation: pulse 2s infinite;
-        }
-        
-        .day-section {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(212, 82, 110, 0.15);
-            animation: fadeInUp 1s ease;
-        }
-        
-        .day-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #ffd6e0;
-        }
-        
-        .day-badge {
-            background: linear-gradient(135deg, #d4526e, #ff6b9d);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1em;
-        }
-        
-        .day-date {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5em;
-            color: #333;
-            font-weight: 600;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 50px;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, #d4526e, #ff6b9d);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-            animation: slideInRight 0.6s ease;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -37px;
-            /* top: 5px; */
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: white;
-            border: 4px solid #d4526e;
-            z-index: 1;
-        }
-        
-        .timeline-content {
-            background: #fff8fa;
-            border-left: 4px solid #ffb3c6;
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .timeline-content:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 20px rgba(212, 82, 110, 0.2);
-        }
-        
-        .time {
-            display: inline-block;
-            background: linear-gradient(135deg, #d4526e, #ff6b9d);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.95em;
-            margin-bottom: 10px;
-        }
-        
-        .activity {
-            color: #333;
-            font-size: 1.1em;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-        
-        .location {
-            color: #666;
-            font-size: 0.95em;
-            margin-top: 8px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .icon {
-            font-size: 1.2em;
-        }
-        
-        .note {
-            background: linear-gradient(135deg, #fff9e6, #ffe6f0);
-            border-left: 5px solid #ffd700;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            font-style: italic;
-            color: #555;
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .day-section {
-                padding: 20px;
-            }
-            
-            .timeline {
-                padding-left: 40px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap Đám Cưới</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Nunito', 'Inter', 'Quicksand', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 500;
+      background: linear-gradient(135deg, #ffeef8 0%, #fff5f0 100%);
+      padding: 20px 15px;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+  </style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', 'Inter', 'Quicksand', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 500;
+      background: linear-gradient(135deg, #ffeef8 0%, #fff5f0 100%);
+      padding: 20px 15px;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Decorative background elements */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    body::before {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #ff6b9d, transparent);
+      top: -100px;
+      right: -100px;
+    }
+
+    body::after {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #d4526e, transparent);
+      bottom: -150px;
+      left: -150px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeInDown 1s ease;
+      background: white;
+      border-radius: 25px;
+      padding: 40px 20px;
+      box-shadow: 0 15px 50px rgba(212, 82, 110, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 107, 157, 0.1), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      background: linear-gradient(135deg, #d4526e, #ff6b9d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+      position: relative;
+      line-height: 1.3;
+    }
+
+    .header .subtitle {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .header .hearts {
+      font-size: 1.8em;
+      animation: pulse 2s infinite;
+      display: inline-block;
+    }
+
+    .day-section {
+      background: white;
+      border-radius: 25px;
+      padding: 30px 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 40px rgba(212, 82, 110, 0.15);
+      animation: fadeInUp 1s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .day-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(212, 82, 110, 0.25);
+    }
+
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #ffd6e0;
+      flex-wrap: wrap;
+    }
+
+    .day-badge {
+      background: linear-gradient(135deg, #d4526e, #ff6b9d);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1em;
+      box-shadow: 0 5px 15px rgba(212, 82, 110, 0.3);
+      flex-shrink: 0;
+    }
+
+    .day-date {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4em;
+      color: #333;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 45px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, #d4526e, #ff6b9d, #ffb3c6);
+      border-radius: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 25px;
+      animation: slideInRight 0.6s ease;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -37px;
+      top: -1px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: white;
+      border: 4px solid #d4526e;
+      z-index: 1;
+      box-shadow: 0 0 0 4px rgba(212, 82, 110, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover::before {
+      transform: scale(1.3);
+      box-shadow: 0 0 0 8px rgba(212, 82, 110, 0.3);
+    }
+
+    .timeline-content {
+      background: linear-gradient(135deg, #fff8fa, #ffffff);
+      border-left: 4px solid #ffb3c6;
+      padding: 20px;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent, rgba(255, 107, 157, 0.05));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      transform: translateX(8px);
+      box-shadow: 0 8px 25px rgba(212, 82, 110, 0.2);
+      border-left-width: 6px;
+    }
+
+    .timeline-content:hover::before {
+      opacity: 1;
+    }
+
+    .time {
+      display: inline-block;
+      background: linear-gradient(135deg, #d4526e, #ff6b9d);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.95em;
+      margin-bottom: 12px;
+      box-shadow: 0 3px 10px rgba(212, 82, 110, 0.3);
+    }
+
+    .activity {
+      color: #333;
+      font-size: 1.05em;
+      line-height: 1.6;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .location {
+      color: #666;
+      font-size: 0.95em;
+      margin-top: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .icon {
+      font-size: 1.2em;
+      flex-shrink: 0;
+    }
+
+    .note {
+      background: linear-gradient(135deg, #fff9e6, #ffe6f0);
+      border-left: 5px solid #ffd700;
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 30px;
+      color: #555;
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    .note strong {
+      color: #d4526e;
+      font-size: 1.1em;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 15px 10px;
+      }
+
+      .header {
+        padding: 30px 15px;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        font-size: 1.8em;
+      }
+
+      .header .subtitle {
+        font-size: 1em;
+      }
+
+      .header .hearts {
+        font-size: 1.5em;
+      }
+
+      .day-section {
+        padding: 25px 20px;
+        margin-bottom: 20px;
+      }
+
+      .day-header {
+        gap: 10px;
+      }
+
+      .day-badge {
+        padding: 10px 20px;
+        font-size: 0.95em;
+      }
+
+      .day-date {
+        font-size: 1.2em;
+      }
+
+      .timeline {
+        padding-left: 40px;
+      }
+
+      .timeline::before {
+        left: 13px;
+      }
+
+      .timeline-item::before {
+        left: -32px;
+        width: 12px;
+        height: 12px;
+      }
+
+      .timeline-content {
+        padding: 18px;
+      }
+
+      .time {
+        padding: 7px 15px;
+        font-size: 0.9em;
+      }
+
+      .activity {
+        font-size: 1em;
+      }
+
+      .location {
+        font-size: 0.9em;
+      }
+
+      .note {
+        padding: 20px;
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 1.5em;
+      }
+
+      .day-date {
+        font-size: 1.1em;
+      }
+
+      .timeline {
+        padding-left: 35px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Lịch trình đám cưới Thái Sơn - Thuỳ Dương</h1>
-            <div class="hearts">💕 💑 💕</div>
-        </div>
-        
-        <div class="day-section">
-            <div class="day-header">
-                <div class="day-badge">Thứ 6</div>
-                <div class="day-date">28/11 - Lễ ăn hỏi</div>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="time">⏰ 08:30</div>
-                        <div class="activity"><span class="icon">🚗</span> Nhà trai có mặt tại nhà gái</div>
-                        <div class="location">📍 Số nhà 73, Tam Hiệp, Phúc Thọ, Hà Nội</div>
-                        <div class="location">🎊 Làm lễ ăn hỏi</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="time">⏰ 10:30</div>
-                        <div class="activity"><span class="icon">🍽️</span> Ăn trưa tại nhà gái</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="time">⏰ 12:00</div>
-                        <div class="activity"><span class="icon">🚗</span> Di chuyển về Hải Dương</div>
-                        <div class="location">🏨 Nhận phòng khách sạn</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="time">⏰ 18:00</div>
-                        <div class="activity"><span class="icon">🍴</span> Ăn tối tại nhà chú rể Sơn</div>
-                        <div class="location">📍 Hải Dương</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="day-section">
-            <div class="day-header">
-                <div class="day-badge">Thứ 7</div>
-                <div class="day-date">29/11 - Ngày cưới 🎉</div>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="time">⏰ 04:00</div>
-                        <div class="activity"><span class="icon">🚗</span> Xuất phát từ nhà trai đến nhà gái</div>
-                        <div class="location">🌟 Đoàn rước dâu khởi hành</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="time">⏰ 07:00</div>
-                        <div class="activity"><span class="icon">💐</span> Đến nhà gái - Làm lễ rước dâu</div>
-                        <div class="location">📍 Số nhà 73, Tam Hiệp, Phúc Thọ, Hà Nội</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="time">⏰ 08:00</div>
-                        <div class="activity"><span class="icon">🚗</span> Từ nhà gái về Hải Dương</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="time">⏰ 10:30</div>
-                        <div class="activity"><span class="icon">🎊</span> Tiệc cưới tại trung tâm tiệc cưới Miến Hương</div>
-                        <div class="location">📍 Số 63, đường Thống Nhất,Tp.Hải Dương</div>
-                        <div class="location">🥂 Mừng hạnh phúc của đôi uyên ương</div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="time">⏰ Chiều</div>
-                        <div class="activity"><span class="icon">☕</span> Nghỉ ngơi, uống nước</div>
-                        <div class="activity" style="margin-top: 10px;"><span class="icon">🚗</span> Mọi người về lại Hà Nội</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="note">
-            <strong>💝 Lưu ý:</strong> Cảm ơn sự có mặt của anh chị em cùng các bạn 🎉💕
-        </div>
+  <div class="container">
+    <div class="header">
+      <h1>Lịch trình đám cưới Thái Sơn - Thuỳ Dương</h1>
+      <div class="hearts">💕 💑 💕</div>
     </div>
+
+    <div class="day-section">
+      <div class="day-header">
+        <div class="day-badge">Thứ 6</div>
+        <div class="day-date">28/11 - Lễ ăn hỏi</div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time">⏰ 08:30</div>
+            <div class="activity"><span class="icon">🚗</span> Nhà trai có mặt tại nhà gái</div>
+            <div class="location"><span class="icon">📍</span> <span>Số nhà 73, Tam Hiệp, Phúc Thọ, Hà Nội</span></div>
+            <div class="location"><span class="icon">🎊</span> <span>Làm lễ ăn hỏi</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time">⏰ 10:30</div>
+            <div class="activity"><span class="icon">🍽️</span> Ăn trưa tại nhà gái</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time">⏰ 12:00</div>
+            <div class="activity"><span class="icon">🚗</span> Di chuyển về Hải Dương</div>
+            <div class="location"><span class="icon">🏨</span> <span>Nhận phòng khách sạn</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time">⏰ 18:00</div>
+            <div class="activity"><span class="icon">🍴</span> Ăn tối tại nhà chú rể Sơn</div>
+            <div class="location"><span class="icon">📍</span> <span>Hải Dương</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-section">
+      <div class="day-header">
+        <div class="day-badge">Thứ 7</div>
+        <div class="day-date">29/11 - Ngày cưới 🎉</div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time">⏰ 04:00</div>
+            <div class="activity"><span class="icon">🚗</span> Xuất phát từ nhà trai đến nhà gái</div>
+            <div class="location"><span class="icon">🌟</span> <span>Đoàn rước dâu khởi hành</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time">⏰ 07:00</div>
+            <div class="activity"><span class="icon">💐</span> Đến nhà gái - Làm lễ rước dâu</div>
+            <div class="location"><span class="icon">📍</span> <span>Số nhà 73, Tam Hiệp, Phúc Thọ, Hà Nội</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time">⏰ 08:00</div>
+            <div class="activity"><span class="icon">🚗</span> Từ nhà gái về Hải Dương</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time">⏰ 10:30</div>
+            <div class="activity"><span class="icon">🎊</span> Tiệc cưới tại trung tâm tiệc cưới Miến Hương</div>
+            <div class="location"><span class="icon">📍</span> <span>Số 63, đường Thống Nhất, Tp.Hải Dương</span></div>
+            <div class="location"><span class="icon">🥂</span> <span>Mừng hạnh phúc của đôi uyên ương</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time">⏰ Chiều</div>
+            <div class="activity"><span class="icon">☕</span> Nghỉ ngơi, uống nước</div>
+            <div class="activity" style="margin-top: 10px;"><span class="icon">🚗</span> Mọi người về lại Hà Nội</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>💝 Lời cảm ơn:</strong> Cảm ơn sự có mặt của anh chị em cùng các bạn! Chúc mọi người một ngày vui vẻ và ấm
+      áp bên gia đình 🎉💕
+    </div>
+  </div>
 </body>
+
 </html>
