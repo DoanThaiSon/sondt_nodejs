@@ -1,16 +1,328 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Roadmap Đám Cưới</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #fff5f0 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            color: #d4526e;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header .hearts {
+            font-size: 2em;
+            color: #ff6b9d;
+            animation: pulse 2s infinite;
+        }
+        
+        .day-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(212, 82, 110, 0.15);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .day-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ffd6e0;
+        }
+        
+        .day-badge {
+            background: linear-gradient(135deg, #d4526e, #ff6b9d);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .day-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #d4526e, #ff6b9d);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            animation: slideInRight 0.6s ease;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid #d4526e;
+            z-index: 1;
+        }
+        
+        .timeline-content {
+            background: #fff8fa;
+            border-left: 4px solid #ffb3c6;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(212, 82, 110, 0.2);
+        }
+        
+        .time {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4526e, #ff6b9d);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+        
+        .activity {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        
+        .location {
+            color: #666;
+            font-size: 0.95em;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .icon {
+            font-size: 1.2em;
+        }
+        
+        .note {
+            background: linear-gradient(135deg, #fff9e6, #ffe6f0);
+            border-left: 5px solid #ffd700;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .day-section {
+                padding: 20px;
+            }
+            
+            .timeline {
+                padding-left: 40px;
+            }
+        }
+    </style>
 </head>
 <body>
-   <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-</div>
+    <div class="container">
+        <div class="header">
+            <h1>Lịch trình đám cưới Thái Sơn - Thuỳ Dương</h1>
+            <div class="hearts">💕 💑 💕</div>
+        </div>
+        
+        <div class="day-section">
+            <div class="day-header">
+                <div class="day-badge">Thứ 6</div>
+                <div class="day-date">28/11 - Lễ ăn hỏi</div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">⏰ 08:30</div>
+                        <div class="activity"><span class="icon">🚗</span> Nhà trai có mặt tại nhà gái</div>
+                        <div class="location">📍 Số nhà 73, Tam Hiệp, Phúc Thọ, Hà Nội</div>
+                        <div class="location">🎊 Làm lễ ăn hỏi</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">⏰ 10:30</div>
+                        <div class="activity"><span class="icon">🍽️</span> Ăn trưa tại nhà gái</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">⏰ 12:00</div>
+                        <div class="activity"><span class="icon">🚗</span> Di chuyển về Hải Dương</div>
+                        <div class="location">🏨 Nhận phòng khách sạn</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">⏰ 18:00</div>
+                        <div class="activity"><span class="icon">🍴</span> Ăn tối tại nhà chú rể Sơn</div>
+                        <div class="location">📍 Hải Dương</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-section">
+            <div class="day-header">
+                <div class="day-badge">Thứ 7</div>
+                <div class="day-date">29/11 - Ngày cưới 🎉</div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">⏰ 04:00</div>
+                        <div class="activity"><span class="icon">🚗</span> Xuất phát từ nhà trai đến nhà gái</div>
+                        <div class="location">🌟 Đoàn rước dâu khởi hành</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">⏰ 07:00</div>
+                        <div class="activity"><span class="icon">💐</span> Đến nhà gái - Làm lễ rước dâu</div>
+                        <div class="location">📍 Số nhà 73, Tam Hiệp, Phúc Thọ, Hà Nội</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">⏰ 08:00</div>
+                        <div class="activity"><span class="icon">🚗</span> Từ nhà gái về Hải Dương</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">⏰ 10:30</div>
+                        <div class="activity"><span class="icon">🎊</span> Tiệc cưới tại trung tâm tiệc cưới</div>
+                        <div class="location">📍 Hải Dương</div>
+                        <div class="location">🥂 Mừng hạnh phúc của đôi uyên ương</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="time">⏰ Chiều</div>
+                        <div class="activity"><span class="icon">☕</span> Nghỉ ngơi, uống nước</div>
+                        <div class="activity" style="margin-top: 10px;"><span class="icon">🚗</span> Mọi người về lại Hà Nội</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note">
+            <strong>💝 Lưu ý:</strong> Cảm ơn sự có mặt của các bạn 🎉💕
+        </div>
+    </div>
 </body>
 </html>

@@ -25,7 +25,7 @@ app.use("/api/banner", bannerRoute);
 app.use("/api/auth", authRoute);
 app.use(express.urlencoded({ extended: true }));
 initAPIRoute(app);
-app.use('/v1',webRoutes);
+app.use('/wedding',webRoutes);
 connectDB().then(() => {
   app.listen(port, () => {
     console.log(`server bắt đầu trên cổng ${port}`);
